@@ -1,6 +1,7 @@
 import React from 'react'
 import SideBar from '../partials/SideBar'
 import ChartWithDate from './ChartWithDate'
+import { DaylyChart } from './DaylyChart'
 
 function AllCharts() {
     return (
@@ -10,9 +11,16 @@ function AllCharts() {
             <div class="content-container">
 
                 <div class="container-fluid">
+                    <div className='row'>
+                        <div className='col-6'>
+                            <DaylyChart></DaylyChart>
 
-                    <ChartWithDate></ChartWithDate>
-                    
+                        </div>
+                        <div className='col-6'>
+                            <ChartWithDate></ChartWithDate>
+
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>

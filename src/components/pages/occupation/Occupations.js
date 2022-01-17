@@ -4,7 +4,7 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import '../../../../node_modules/react-confirm-alert/src/react-confirm-alert.css';
 import { w3cwebsocket as W3CWebSocket } from "websocket";
 
-const client = new W3CWebSocket('wss://fierce-ridge-76224.herokuapp.com');
+const client = new W3CWebSocket('ws://localhost:8080/');
 
 export class Occupations extends Component {
     constructor(props) {
@@ -69,7 +69,7 @@ export class Occupations extends Component {
         )
     }
     deleteOccupation(id){
-        axios.delete("https://fierce-ridge-76224.herokuapp.com/occupations/"+id).then(
+        axios.delete("http://localhost:3000/occupations/"+id).then(
             Response =>{
                 console.log("done");
             }
@@ -113,7 +113,6 @@ export class Occupations extends Component {
          console.log('WebSocket Client Connected');
         };
         client.onmessage = (message) => {
-          console.log(message)
                 this.chercherSalle(this.state.salle)
 
         };
