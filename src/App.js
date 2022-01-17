@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import SideBar from './components/partials/SideBar';
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter ,Navigate} from "react-router-dom";
 import Login from './components/user/Login';
 import BlocT from './components/pages/bloc/BlocT';
 import SalleT from './components/pages/salle/SalleT';
@@ -15,8 +15,17 @@ import Grid from './components/pages/dashboard/Grid';
 
 
 function App() {
+  var a=false
   const condition = JSON.parse(window.localStorage.getItem('user'));
-  // console.log(condition.response)
+  if(condition==null){
+    a=false
+  }else{
+    a=true
+
+  }
+  console.log(condition)
+  console.log(a)
+
   return (
     <div className="App">
 
@@ -24,14 +33,14 @@ function App() {
         <Route path='/login' element={<Login />} exact />
         <Route path='/register' element={<Register/>} exact />
 
-        <Route path='/' element={<GridView />} />
-        <Route path='/statistique' element={<AllCharts />} />
-        <Route path='/bloc' element={<BlocT />} exact/>
-        {/* <Route path='/bloc'>{t?(<BlocT/>):(<Navigate to= '/login'/>)}</Route> */}
+        <Route path='/'  element={a?(<GridView/>):(<Navigate to= '/login'/>)}  />
+        <Route path='/statistique' element={a?(<AllCharts/>):(<Navigate to= '/login'/>)} />
+        <Route path='/bloc' element={a?(<BlocT/>):(<Navigate to= '/login'/>)} exact/>
+        {/* <Route path='/bloc'>{a?(<BlocT/>):(<Navigate to= '/login'/>)}</Route> */}
 
-        <Route path='/salle' element={<SalleT />} />
-        <Route path='/creneau' element={<ChronoT />} />
-        <Route path='/occupation' element={<OccupationT />} />
+        <Route path='/salle'  element={a?(<SalleT/>):(<Navigate to= '/login'/>)} />
+        <Route path='/creneau'  element={a?(<ChronoT/>):(<Navigate to= '/login'/>)}  />
+        <Route path='/occupation'  element={a?(<OccupationT/>):(<Navigate to= '/login'/>)}  />
       </Routes>
 
 

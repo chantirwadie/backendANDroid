@@ -4,7 +4,7 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import '../../../../node_modules/react-confirm-alert/src/react-confirm-alert.css';
 import { w3cwebsocket as W3CWebSocket } from "websocket";
 
-const client = new W3CWebSocket('ws://localhost:8080/');
+const client = new W3CWebSocket('wss:http://fierce-ridge-76224.herokuapp.com/');
 
 export class Occupations extends Component {
     constructor(props) {
@@ -69,7 +69,7 @@ export class Occupations extends Component {
         )
     }
     deleteOccupation(id){
-        axios.delete("http://localhost:3000/occupations/"+id).then(
+        axios.delete("http://fierce-ridge-76224.herokuapp.com/occupations/"+id).then(
             Response =>{
                 console.log("done");
             }
@@ -105,18 +105,18 @@ export class Occupations extends Component {
         this.chercherSalle(this.state.salle)
         this.getSalle()
     }
-    // componentDidUpdate() {
-    //     this.chercherSalle(this.state.salle)
-    // }
-    componentWillMount() {
-        client.onopen = () => {
-         console.log('WebSocket Client Connected');
-        };
-        client.onmessage = (message) => {
-                this.chercherSalle(this.state.salle)
+    componentDidUpdate() {
+        this.chercherSalle(this.state.salle)
+    }
+    // componentWillMount() {
+    //     client.onopen = () => {
+    //      console.log('WebSocket Client Connected');
+    //     };
+    //     client.onmessage = (message) => {
+    //             this.chercherSalle(this.state.salle)
 
-        };
-      }
+    //     };
+    //   }
 
     render() {
         const {date} =this.state
