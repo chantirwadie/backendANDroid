@@ -19,7 +19,7 @@ function Login() {
                     console.log("good")
                     window.localStorage.clear();
                     window.localStorage.setItem('user', JSON.stringify(Response.data));
-                    navigate('/');
+                    navigate('/statistique');
 
                 } else {
                     console.log("not good")

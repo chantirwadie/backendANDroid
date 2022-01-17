@@ -33,8 +33,8 @@ function App() {
         <Route path='/login' element={<Login />} exact />
         <Route path='/register' element={<Register/>} exact />
 
-        <Route path='/'  element={a?(<GridView/>):(<Navigate to= '/login'/>)}  />
-        <Route path='/statistique' element={a?(<AllCharts/>):(<Navigate to= '/login'/>)} />
+        <Route path='/'  element={a?(<GridView/>):(<Navigate to= '/login'/>)} />
+        <Route path='/statistique' element={<AllCharts/>} />
         <Route path='/bloc' element={a?(<BlocT/>):(<Navigate to= '/login'/>)} exact/>
         {/* <Route path='/bloc'>{a?(<BlocT/>):(<Navigate to= '/login'/>)}</Route> */}
 

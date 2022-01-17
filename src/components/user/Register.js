@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios'
 function Register() {
+    const navigate = useNavigate();
 
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -22,6 +23,7 @@ function Register() {
                 if (showUpdateSuccess) {
                     showUpdateSuccess.style.display = "block";
                 }
+                navigate('/');
                 setTimeout(function () {
                     if (showUpdateSuccess) {
                         showUpdateSuccess.style.display = "none"
