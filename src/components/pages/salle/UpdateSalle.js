@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom";
+import SideBar from '../../partials/SideBar'
+
 
 function UpdateSalle() {
     const navigate = useNavigate();

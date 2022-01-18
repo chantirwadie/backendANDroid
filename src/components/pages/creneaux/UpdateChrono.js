@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from "react-router-dom";
+import SideBar from '../../partials/SideBar'
+
 import axios from 'axios'
 function UpdateChrono() {
   const navigate = useNavigate();
