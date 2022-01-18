@@ -26,33 +26,38 @@ function UpdateBloc() {
     setbloc(result.data);
     console.log(bloc)
   };
-  
+
   return (
     <div>
       <div>
-        <div>
-          <h1 class="text-center text-success"> GESTION DES BLOCS</h1>
-        </div>
-        <div className='text-center m-3'>
-          <h3>MODIFIER DES BLOCS</h3>
-        </div>
-        <div className='row'>
-          <div className='col-md-2'></div>
-          <div className="col-md-8 text-center">
-            <div className='m-5'>
-              <form onSubmit={e => onSubmit(e)} >
-                <div class="form-group">
-                  <label for="">Name :</label>
-                  <input type="text" class="form-control" name='name' value={name}
-                    onChange={e => onInputChange(e)} />
-                  <button type="submit" className='btn btn-info mt-5'>Modifier</button>
-                </div>
-              </form>
-            </div>
+        <SideBar></SideBar>
+        <div class="content-container">
 
+          <div class="container-fluid">
+            <div>
+              <h1 class="text-center text-success"> GESTION DES BLOCS</h1>
+            </div>
+            <div className='text-center m-3'>
+              <h3>MODIFIER DES BLOCS</h3>
+            </div>
+            <div className='row'>
+              <div className='col-md-2'></div>
+              <div className="col-md-8 text-center">
+                <div className='m-5'>
+                  <form onSubmit={e => onSubmit(e)} >
+                    <div class="form-group">
+                      <label for="">Name :</label>
+                      <input type="text" class="form-control" name='name' value={name}
+                        onChange={e => onInputChange(e)} />
+                      <button type="submit" className='btn btn-info mt-5'>Modifier</button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
 
     </div>

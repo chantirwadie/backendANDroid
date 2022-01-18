@@ -69,39 +69,45 @@ function UpdateSalle() {
     return (
         <div>
             <div>
-                <div>
-                    <h1 class="text-center text-success"> GESTION DES SALLES</h1>
-                </div>
-                <div className='text-center m-3'>
-                    <h3>MODIFIER DES SALLES</h3>
-                </div>
-                <div className='row'>
-                    <div className='col-md-2'></div>
-                    <div className="col-md-8 text-center">
-                        <form onSubmit={e => onSubmit(e)}>
-                            <div class="form-group">
-                                <div class="mt-3">
-                                    <label class="mb-2" for="">Name :</label>
-                                    <input type="text" defaultValue={salles.name} ref={nameRef} className="form-control" name='name' onChange={e => onInputChange(e)} />
-                                </div>
-                                <div class="mt-3">
-                                    <label class="mb-2" for="">Type :</label>
-                                    <input type="text" defaultValue={salles.type} ref={typeRef} className="form-control" name='type' onChange={e => onInputChange(e)} />
-                                </div>
+                <SideBar></SideBar>
+                <div class="content-container">
 
-                                <div class="mt-3">
-                                    <label class="mb-2" for="">Bloc</label>
-                                    <select class="form-select" ref={blocRef} aria-label="Default select example" name="bloc" onChange={e => onInputChange(e)}>
-                                        {blocs.map(b => (
-                                            <option defaultValue={salles.bloc._id} value={b._id}>{b.name}</option>
-                                        ))}
-                                    </select>
+                    <div class="container-fluid">
+                        <div>
+                            <h1 class="text-center text-success"> GESTION DES SALLES</h1>
+                        </div>
+                        <div className='text-center m-3'>
+                            <h3>MODIFIER DES SALLES</h3>
+                        </div>
+                        <div className='row'>
+                            <div className='col-md-2'></div>
+                            <div className="col-md-8 text-center">
+                                <form onSubmit={e => onSubmit(e)}>
+                                    <div class="form-group">
+                                        <div class="mt-3">
+                                            <label class="mb-2" for="">Name :</label>
+                                            <input type="text" defaultValue={salles.name} ref={nameRef} className="form-control" name='name' onChange={e => onInputChange(e)} />
+                                        </div>
+                                        <div class="mt-3">
+                                            <label class="mb-2" for="">Type :</label>
+                                            <input type="text" defaultValue={salles.type} ref={typeRef} className="form-control" name='type' onChange={e => onInputChange(e)} />
+                                        </div>
+
+                                        <div class="mt-3">
+                                            <label class="mb-2" for="">Bloc</label>
+                                            <select class="form-select" ref={blocRef} aria-label="Default select example" name="bloc" onChange={e => onInputChange(e)}>
+                                                {blocs.map(b => (
+                                                    <option defaultValue={salles.bloc._id} value={b._id}>{b.name}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        <button type="submit" className='btn btn-info mt-5'>Modifier</button>
+                                    </div>
+                                </form>
+                                <div className='m-5'>
+
                                 </div>
-                                <button type="submit" className='btn btn-info mt-5'>Modifier</button>
                             </div>
-                        </form>
-                        <div className='m-5'>
-
                         </div>
                     </div>
                 </div>

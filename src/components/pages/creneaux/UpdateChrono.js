@@ -32,32 +32,37 @@ function UpdateChrono() {
   return (
     <div>
       <div>
-        <div>
-          <h1 class="text-center text-success"> GESTION DES CHRONOS</h1>
-        </div >
-        <div className='text-center m-3'>
-          <h3>MODIFIER DES CHRONOS</h3>
-        </div>
-        <div className='row'>
-          <div className='col-md-2'></div>
-          <div className="col-md-8 text-center">
-            <form onSubmit={e => onSubmit(e)}>
-              <div class="form-group">
-                <div class="mt-3">
-                  <label class="mb-2" for="">Date De Debut :</label>
-                  <input type="time" className="form-control" name='dateDebut' value={dateDebut} onChange={e => onInputChange(e)} />
-                </div>
-                <div class="mt-3">
-                  <label class="mb-2" for="">Date De Fin :</label>
-                  <input type="time" className="form-control" name='dateFin' value={dateFin} onChange={e => onInputChange(e)} />
-                </div>
-                <button type="submit" className='btn btn-info mt-5'>Modifier</button>
+        <SideBar></SideBar>
+        <div class="content-container">
+
+          <div class="container-fluid">
+            <div>
+              <h1 class="text-center text-success"> GESTION DES CHRONOS</h1>
+            </div >
+            <div className='text-center m-3'>
+              <h3>MODIFIER DES CHRONOS</h3>
+            </div>
+            <div className='row'>
+              <div className='col-md-2'></div>
+              <div className="col-md-8 text-center">
+                <form onSubmit={e => onSubmit(e)}>
+                  <div class="form-group">
+                    <div class="mt-3">
+                      <label class="mb-2" for="">Date De Debut :</label>
+                      <input type="time" className="form-control" name='dateDebut' value={dateDebut} onChange={e => onInputChange(e)} />
+                    </div>
+                    <div class="mt-3">
+                      <label class="mb-2" for="">Date De Fin :</label>
+                      <input type="time" className="form-control" name='dateFin' value={dateFin} onChange={e => onInputChange(e)} />
+                    </div>
+                    <button type="submit" className='btn btn-info mt-5'>Modifier</button>
+                  </div>
+                </form>
               </div>
-            </form>
+
+            </div>
           </div>
-
         </div>
-
       </div>
     </div>
   )
