@@ -49,7 +49,7 @@ function AjouterOccupation() {
         console.log(occup)
         const condition = JSON.parse(window.localStorage.getItem('user'));
         console.log(condition.user[0]._id)
-        axios.post("http://fierce-ridge-76224.herokuapp.com/occupations/", {
+        axios.post("https://fierce-ridge-76224.herokuapp.com/occupations/", {
             salle: salleRef.current.value,
             chrono: chronoRef.current.value,
             user:condition.user[0]._id ,
