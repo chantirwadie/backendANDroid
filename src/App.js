@@ -8,6 +8,9 @@ import SalleT from './components/pages/salle/SalleT';
 import OccupationT from './components/pages/occupation/OccupationT';
 import ChronoT from './components/pages/creneaux/ChronoT';
 import GridView from './components/pages/dashboard/GridView';
+import UpdateBloc from './components/pages/bloc/UpdateBloc'
+import UpdateChrono from './components/pages/creneaux/UpdateChrono';
+import UpdateSalle from './components/pages/salle/UpdateSalle';
 import ChartWithDate from './components/charts/ChartWithDate';
 import AllCharts from './components/charts/AllCharts';
 import Register from './components/user/Register';
@@ -32,8 +35,10 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} exact />
         <Route path='/register' element={<Register/>} exact />
-
-        <Route path='/'  element={a?(<GridView/>):(<Navigate to= '/login'/>)} />
+        <Route path='/update/:id' element={<UpdateBloc />}/>
+        <Route path='/updateChrono/:id' element={<UpdateChrono />}/>
+        <Route path='/UpdateSalle/:id' element={<UpdateSalle />}/>
+        <Route path='/'  element={<GridView/>} />
         <Route path='/statistique' element={<AllCharts/>} />
         <Route path='/bloc' element={a?(<BlocT/>):(<Navigate to= '/login'/>)} exact/>
         {/* <Route path='/bloc'>{a?(<BlocT/>):(<Navigate to= '/login'/>)}</Route> */}
