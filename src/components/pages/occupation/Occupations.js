@@ -69,7 +69,7 @@ export class Occupations extends Component {
         )
     }
     deleteOccupation(id){
-        axios.delete("http://fierce-ridge-76224.herokuapp.com/occupations/"+id).then(
+        axios.delete("https://fierce-ridge-76224.herokuapp.com/occupations/"+id).then(
             Response =>{
                 console.log("done");
             }
