@@ -15,6 +15,7 @@ import ChartWithDate from './components/charts/ChartWithDate';
 import AllCharts from './components/charts/AllCharts';
 import Register from './components/user/Register';
 import Grid from './components/pages/dashboard/Grid';
+import Privacy from './components/user/Privacy';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path='/updateChrono/:id' element={<UpdateChrono />}/>
         <Route path='/UpdateSalle/:id' element={<UpdateSalle />}/>
         <Route path='/'  element={<GridView/>} />
+        <Route path='/privacy'  element={<Privacy/>} />
         <Route path='/statistique' element={<AllCharts/>} />
         <Route path='/bloc' element={a?(<BlocT/>):(<Navigate to= '/login'/>)} exact/>
         {/* <Route path='/bloc'>{a?(<BlocT/>):(<Navigate to= '/login'/>)}</Route> */}
